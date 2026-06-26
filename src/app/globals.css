@@ -310,7 +310,7 @@ nav a:hover::after {
 .hero h1 {
   font-family: var(--font-fraunces), serif;
   font-weight: 340;
-  font-size: clamp(44px, 7.2vw, 92px);
+  font-size: clamp(38px, 6vw, 76px);
   line-height: 0.98;
   letter-spacing: -0.01em;
 }
