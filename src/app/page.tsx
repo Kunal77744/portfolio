@@ -438,6 +438,68 @@ export default function Home() {
       magneticLeaveHandlers.set(el, leaveHandler);
     });
 
+    // 11. Additional Premium Animations (from portfolio_10)
+    const progressTween = gsap.to('#progress', {
+      width: '100%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: 'body',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true
+      }
+    });
+
+    const titleTriggers: gsap.core.Tween[] = [];
+    document.querySelectorAll('.sec-title').forEach(el => {
+      const t = gsap.to(el, {
+        clipPath: 'inset(0 0% 0 0)',
+        duration: 1.1,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%'
+        }
+      });
+      titleTriggers.push(t);
+    });
+
+    const visualTriggers: gsap.core.Tween[] = [];
+    document.querySelectorAll('.proj-visual').forEach(el => {
+      const t = gsap.to(el, {
+        clipPath: 'inset(0 0 0% 0)',
+        duration: 1,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%'
+        }
+      });
+      visualTriggers.push(t);
+    });
+
+    const parallaxTween = gsap.to('.status-panel', {
+      y: 40,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // Staggered scroll batch reveals for skills and credentials
+    gsap.set('.skill-tile, .creds-item', { opacity: 0, y: 16 });
+    const skillBatch = ScrollTrigger.batch('.skill-tile', {
+      start: 'top 92%',
+      onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.05 })
+    });
+    const credsBatch = ScrollTrigger.batch('.creds-item', {
+      start: 'top 92%',
+      onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.04 })
+    });
+
     // Cleanup all event listeners, timers, and animation frames on component unmount
     return () => {
       clearInterval(iv);
@@ -467,6 +529,12 @@ export default function Home() {
 
       batch.forEach((b) => b.kill());
       revealTriggers.forEach((t) => t.kill());
+      progressTween.kill();
+      parallaxTween.kill();
+      titleTriggers.forEach(t => t.kill());
+      visualTriggers.forEach(t => t.kill());
+      skillBatch.forEach(b => b.kill());
+      credsBatch.forEach(b => b.kill());
       ScrollTrigger.getAll().forEach((t) => t.kill());
 
       magneticElements.forEach((el) => {
@@ -480,6 +548,7 @@ export default function Home() {
 
   return (
     <>
+      <div id="progress"></div>
       <div id="glow"></div>
       <div id="grain"></div>
       <div id="cursor"></div>
@@ -511,6 +580,9 @@ export default function Home() {
             </li>
             <li>
               <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#credentials">Credentials</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
@@ -776,6 +848,72 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="credentials">
+          <div className="wrap">
+            <div className="sec-head reveal">
+              <div>
+                <span className="sec-label">05 / Credentials</span>
+                <h2 className="sec-title">Education, certifications, and a few wins.</h2>
+              </div>
+              <p className="sec-note">The paper trail behind the projects.</p>
+            </div>
+
+            <div className="creds-grid reveal">
+              <div className="creds-col">
+                <h4>Education</h4>
+                <div className="creds-item">
+                  <div className="ct">Master of Computer Applications (MCA)</div>
+                  <span className="cs">USICT, GGSIPU · 2024–2026 · CGPA 7.01/10</span>
+                </div>
+                <div className="creds-item">
+                  <div className="ct">Bachelor of Science (B.Sc.)</div>
+                  <span className="cs">Institute for Excellence in Higher Education, Bhopal · 2019–2022</span>
+                </div>
+              </div>
+
+              <div className="creds-col">
+                <h4>Certifications</h4>
+                <div className="creds-item">
+                  <div className="ct">IBM SkillsBuild — Front-End Web Development</div>
+                  <span className="cs">Project Based Learning Program</span>
+                </div>
+                <div className="creds-item">
+                  <div className="ct">Tata GenAI Powered Data Analytics</div>
+                  <span className="cs">Job Simulation · Forage</span>
+                </div>
+                <div className="creds-item">
+                  <div className="ct">Cisco CyberOps Associate</div>
+                  <span className="cs">Cisco</span>
+                </div>
+                <div className="creds-item">
+                  <div className="ct">Cisco Python Essentials 1</div>
+                  <span className="cs">Cisco</span>
+                </div>
+                <div className="creds-item">
+                  <div className="ct">SQL (Intermediate) · Python (Basic)</div>
+                  <span className="cs">HackerRank</span>
+                </div>
+              </div>
+
+              <div className="creds-col">
+                <h4>Achievements</h4>
+                <div className="creds-item">
+                  <div className="ct">Top 1% in Job Readiness</div>
+                  <span className="cs">Naukri Campus CareerVerse</span>
+                </div>
+                <div className="creds-item">
+                  <div className="ct">Advanced to TCS Ninja interview stage</div>
+                  <span className="cs">TCS Recruitment Process</span>
+                </div>
+                <div className="creds-item">
+                  <div className="ct">Rank 336 / 33,663</div>
+                  <span className="cs">Prompt War 3 · Top 1%</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>

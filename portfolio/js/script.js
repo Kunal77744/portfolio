@@ -33,9 +33,49 @@ function introAnim(){
 }
 gsap.set('.hero .eyebrow, .hero-sub, .hero-actions, .status-panel', { opacity:0, y:20 });
 
+/* text mask-reveal for section titles — wipes in left-to-right instead of plain fade */
+document.querySelectorAll('.sec-title').forEach(el=>{
+  gsap.to(el, {
+    clipPath:'inset(0 0% 0 0)', duration:1.1, ease:'power4.out',
+    scrollTrigger:{ trigger: el, start:'top 88%' }
+  });
+});
+
+/* curtain-reveal for project visuals — raises like a blind instead of fading */
+document.querySelectorAll('.proj-visual').forEach(el=>{
+  gsap.to(el, {
+    clipPath:'inset(0 0 0% 0)', duration:1, ease:'power4.out',
+    scrollTrigger:{ trigger: el, start:'top 85%' }
+  });
+});
+
 document.querySelectorAll('.reveal').forEach((el) => {
   gsap.to(el, { opacity:1, y:0, duration:0.9, ease:'power3.out', scrollTrigger: { trigger: el, start:'top 85%' } });
 });
+
+/* staggered entrance for individual skill tiles + creds items (nicer than one flat block fade) */
+gsap.set('.skill-tile, .creds-item', { opacity:0, y:16 });
+ScrollTrigger.batch('.skill-tile', {
+  start:'top 92%',
+  onEnter: (els) => gsap.to(els, { opacity:1, y:0, duration:0.6, ease:'power3.out', stagger:0.05 })
+});
+ScrollTrigger.batch('.creds-item', {
+  start:'top 92%',
+  onEnter: (els) => gsap.to(els, { opacity:1, y:0, duration:0.5, ease:'power3.out', stagger:0.04 })
+});
+
+/* subtle parallax on the hero status panel */
+gsap.to('.status-panel', {
+  y: 40, ease:'none',
+  scrollTrigger: { trigger:'.hero', start:'top top', end:'bottom top', scrub:true }
+});
+
+/* scroll progress bar */
+gsap.to('#progress', {
+  width:'100%', ease:'none',
+  scrollTrigger: { trigger:'body', start:'top top', end:'bottom bottom', scrub:true }
+});
+
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click', e=>{
@@ -68,7 +108,7 @@ document.querySelectorAll('a, button, [data-tilt], .magnetic').forEach(el=>{
 
 /* active nav highlight on scroll */
 const navLinks = document.querySelectorAll('nav a');
-const sections = document.querySelectorAll('main section, .hero');
+const sections = document.querySelectorAll('main section[id]');
 ScrollTrigger.batch(sections, {
   onEnter: (els) => els.forEach(el=>{
     const id = '#' + el.id;
