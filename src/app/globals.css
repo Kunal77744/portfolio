@@ -1133,3 +1133,8 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.reversed-email {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}

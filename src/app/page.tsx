@@ -703,7 +703,7 @@ export default function Home() {
                 <p>Open to full-time MERN / Full Stack roles. Reach out directly or drop a message.</p>
 
                 <button className="copy-email" id="copyEmail" onClick={handleCopyEmail}>
-                  deshmukhkunal813@gmail.com
+                  <span className="reversed-email">moc.liamg@318lanukhsuhsed</span>
                   <span className="ic" id="copyState">
                     {copied ? "Copied ✓" : "Copy"}
                   </span>
