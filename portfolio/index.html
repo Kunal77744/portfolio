@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunal Deshmukh — Full Stack Developer</title>
+<meta name="description" content="Kunal Deshmukh — MERN / Full Stack Developer.">
+<meta property="og:title" content="Kunal Deshmukh — Full Stack Developer">
+<meta property="og:description" content="MERN / Full Stack Developer. Building, shipping, competing.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0B'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' fill='%235EE6C8' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="glow"></div>
+<div id="grain"></div>
+<div id="cursor"></div>
+
+<div id="loader">
+  <div class="symbol">Initializing portfolio</div>
+  <div class="bar"><span id="loaderbar"></span></div>
+  <div class="pct" id="loaderpct">00%</div>
+</div>
+
+<header>
+  <a href="#top" class="logo">kunal<span>.</span>dev</a>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero" style="border-top:none;">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Available for full-time roles · Delhi, IN</div>
+          <h1>
+            <div class="line"><span>I build</span></div>
+            <div class="line"><span>full&nbsp;stack</span></div>
+            <div class="line"><span>products that <em>ship</em>.</span></div>
+          </h1>
+          <p class="hero-sub">I'm <strong>Kunal Deshmukh</strong> — an MCA graduate from USICT, GGSIPU, building production MERN applications and competing in hackathons and competitive programming on the side.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn primary magnetic"><span>View Projects</span><span class="arrow">→</span></a>
+            <a href="#contact" class="btn magnetic"><span>Get in touch</span></a>
+          </div>
+        </div>
+
+        <div class="status-panel magnetic">
+          <div class="status-bigname">Kunal Deshmukh</div>
+          <div class="status-divider"></div>
+          <div class="status-row"><span class="k">Role</span><span class="v">MERN / Full Stack Dev</span></div>
+          <div class="status-row"><span class="k">Status</span><span class="v accent">● Open to work</span></div>
+          <div class="status-row"><span class="k">Based in</span><span class="v">Delhi, India</span></div>
+          <div class="status-row"><span class="k">Currently</span><span class="v">Redrob Hackathon</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue"><div class="stick"><span></span></div> Scroll</div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="sec-label">01 / About</span>
+          <h2 class="sec-title">Self-taught, project-first, and a little obsessed with shipping.</h2>
+        </div>
+        <p class="sec-note">Fewer tutorials. More deployed apps.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I completed my <strong>MCA at USICT, GGSIPU</strong> and have been building the <strong>MERN stack</strong> through real projects rather than waiting on coursework — closing gaps in JS fundamentals along the way by just building.</p>
+          <p>Outside of job hunting, I spend most of my time in <strong>competitive programming</strong> and <strong>hackathons</strong> — currently building as part of <strong>Team KD_ByteBusters</strong> for the Redrob INDIA.RUNS Hackathon.</p>
+          <p>I'm currently targeting <strong>Full Stack / MERN Developer</strong> roles at service-based IT companies, with TCS NQT already cleared and applications active on Naukri and LinkedIn.</p>
+        </div>
+
+        <div class="stat-grid reveal">
+          <div class="stat"><div class="n">2<span>+</span></div><div class="l">Deployed Full-stack Apps</div></div>
+          <div class="stat"><div class="n">336<span>th</span></div><div class="l">/ 33,663 — Prompt War 3</div></div>
+          <div class="stat"><div class="n">Top 1<span>%</span></div><div class="l">Competitive Ranking</div></div>
+          <div class="stat"><div class="n">TCS<span> NQT</span></div><div class="l">Cleared</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="sec-label">02 / Skills</span>
+          <h2 class="sec-title">What I actually build with.</h2>
+        </div>
+        <p class="sec-note">No progress bars — just the stack, grouped by use.</p>
+      </div>
+
+      <div class="marquee reveal">
+        <div class="marquee-track" id="marqueeTrack">
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/react/ffffff" alt="React"><span>React</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/nodedotjs/ffffff" alt="Node.js"><span>Node.js</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/express/ffffff" alt="Express"><span>Express</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/mongodb/ffffff" alt="MongoDB"><span>MongoDB</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/javascript/ffffff" alt="JavaScript"><span>JavaScript</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/python/ffffff" alt="Python"><span>Python</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/tailwindcss/ffffff" alt="Tailwind CSS"><span>Tailwind CSS</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/git/ffffff" alt="Git"><span>Git</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub"><span>GitHub</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/netlify/ffffff" alt="Netlify"><span>Netlify</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/vercel/ffffff" alt="Vercel"><span>Vercel</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/render/ffffff" alt="Render"><span>Render</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/googlegemini/ffffff" alt="Gemini API"><span>Gemini API</span></div>
+          <div class="marquee-item"><img src="https://cdn.simpleicons.org/mysql/ffffff" alt="SQL"><span>SQL</span></div>
+        </div>
+      </div>
+
+      <div class="skill-grid reveal">
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/react/ffffff" alt=""><div class="txt"><div class="lbl">Frontend</div><div class="name">React.js</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/tailwindcss/ffffff" alt=""><div class="txt"><div class="lbl">Frontend</div><div class="name">Tailwind CSS</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/nodedotjs/ffffff" alt=""><div class="txt"><div class="lbl">Backend</div><div class="name">Node.js</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/express/ffffff" alt=""><div class="txt"><div class="lbl">Backend</div><div class="name">Express.js</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/mongodb/ffffff" alt=""><div class="txt"><div class="lbl">Database</div><div class="name">MongoDB</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/mysql/ffffff" alt=""><div class="txt"><div class="lbl">Database</div><div class="name">SQL</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/javascript/ffffff" alt=""><div class="txt"><div class="lbl">Language</div><div class="name">JavaScript</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/python/ffffff" alt=""><div class="txt"><div class="lbl">Language</div><div class="name">Python</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/leetcode/ffffff" alt=""><div class="txt"><div class="lbl">Practice</div><div class="name">DSA</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/git/ffffff" alt=""><div class="txt"><div class="lbl">Tooling</div><div class="name">Git / GitHub</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/netlify/ffffff" alt=""><div class="txt"><div class="lbl">Deployment</div><div class="name">Netlify</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/vercel/ffffff" alt=""><div class="txt"><div class="lbl">Deployment</div><div class="name">Vercel</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/render/ffffff" alt=""><div class="txt"><div class="lbl">Deployment</div><div class="name">Render</div></div></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/googlegemini/ffffff" alt=""><div class="txt"><div class="lbl">AI</div><div class="name">Gemini API</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="sec-label">03 / Experience</span>
+          <h2 class="sec-title">Where the work has actually been.</h2>
+        </div>
+        <p class="sec-note">Most recent first.</p>
+      </div>
+
+      <div class="pathway reveal">
+
+        <div class="path-step active">
+          <div class="path-meta"><span class="y">2026 — ongoing</span></div>
+          <h3>Hackathon Builder, Team KD_ByteBusters</h3>
+          <p>Competing in the Redrob INDIA.RUNS Hackathon. Built a fully offline, CPU-only candidate-ranking pipeline for 100K profiles (Track 1), and currently producing content for the Social Media track across Reels, LinkedIn posts, and a long-form article.</p>
+          <div class="path-tags"><span class="tag">Python</span><span class="tag">Pipeline Design</span><span class="tag">Hack2Skill</span></div>
+        </div>
+
+        <div class="path-step active">
+          <div class="path-meta"><span class="y">2025 — 2026</span></div>
+          <h3>AI-Powered Study Buddy — IBM SkillsBuild / Edunet Foundation</h3>
+          <p>Built an AI study companion using Streamlit and Gemini 2.5 Flash as a capstone for the internship program, shipping it as a working app with a full presentation deck.</p>
+          <div class="path-tags"><span class="tag">Streamlit</span><span class="tag">Gemini API</span><span class="tag">Python</span></div>
+        </div>
+
+        <div class="path-step active">
+          <div class="path-meta"><span class="y">2024 — 2026</span></div>
+          <h3>MCA, University School of ICT (USICT) — GGSIPU</h3>
+          <p>Built a working knowledge of the MERN stack through projects, alongside coursework — with a steady focus on DSA and interview-readiness for service-based IT roles.</p>
+          <div class="path-tags"><span class="tag">MERN</span><span class="tag">DSA</span><span class="tag">Self-taught</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="sec-label">04 / Projects</span>
+          <h2 class="sec-title">Things I've built and shipped.</h2>
+        </div>
+        <p class="sec-note">Live, deployed, and on GitHub.</p>
+      </div>
+
+      <div class="reveal">
+        <div class="proj">
+          <div>
+            <div class="proj-num">Project 01</div>
+            <h3>EcoTrace — Carbon Emission Tracker</h3>
+            <p>A sustainability-focused MERN application that lets users log activity and visualize their estimated carbon footprint over time — full CRUD, auth, interactive dashboards and data visualization.</p>
+            <div class="proj-links">
+              <a href="https://ecotrace-mu.vercel.app" target="_blank" rel="noopener">Live Demo ↗</a>
+              <a href="https://github.com/mern2026book-cmd/CarbonEmission" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="proj-visual">
+            <div class="stack-badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/react/ffffff" alt="">React</span><span class="badge"><img src="https://cdn.simpleicons.org/nodedotjs/ffffff" alt="">Node.js</span><span class="badge"><img src="https://cdn.simpleicons.org/express/ffffff" alt="">Express</span><span class="badge"><img src="https://cdn.simpleicons.org/mongodb/ffffff" alt="">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div>
+            <div class="proj-num">Project 02</div>
+            <h3>Bookify — Full-Stack E-Commerce Platform</h3>
+            <p>A full-stack bookstore built on the MERN stack with REST APIs for inventory, user management and order processing — including search, category filtering, and a working shopping cart.</p>
+            <div class="proj-links">
+              <a href="https://github.com/Kunal77744/Shopify" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="proj-visual">
+            <div class="stack-badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/react/ffffff" alt="">React</span><span class="badge"><img src="https://cdn.simpleicons.org/express/ffffff" alt="">Express</span><span class="badge"><img src="https://cdn.simpleicons.org/mongodb/ffffff" alt="">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div>
+            <div class="proj-num">Project 03</div>
+            <h3>AI Study Buddy</h3>
+            <p>An AI-powered study companion built for the IBM SkillsBuild / Edunet Foundation capstone — Gemini 2.5 Flash handles reasoning, Streamlit handles the interface.</p>
+            <div class="proj-links">
+              <a href="https://github.com/Kunal77744/AI-Study-Buddy" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="proj-visual">
+            <div class="stack-badges">
+              <span class="badge"><img src="https://cdn.simpleicons.org/python/ffffff" alt="">Python</span><span class="badge"><img src="https://cdn.simpleicons.org/streamlit/ffffff" alt="">Streamlit</span><span class="badge"><img src="https://cdn.simpleicons.org/googlegemini/ffffff" alt="">Gemini API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="reveal">
+          <h2>Let's <em>build</em> something.</h2>
+          <p>Open to full-time MERN / Full Stack roles. Reach out directly or drop a message.</p>
+
+          <button class="copy-email" id="copyEmail">
+            deshmukhkunal813@gmail.com
+            <span class="ic" id="copyState">Copy</span>
+          </button>
+
+          <div class="social-row">
+            <a href="https://github.com/Kunal77744" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener">Naukri</a>
+          </div>
+        </div>
+
+        <form class="reveal" id="contactForm" onsubmit="return false;">
+          <div class="field">
+            <label for="cname">Name</label>
+            <input id="cname" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="cemail">Email</label>
+            <input id="cemail" type="email" placeholder="you@email.com" required>
+          </div>
+          <div class="field">
+            <label for="cmsg">Message</label>
+            <textarea id="cmsg" placeholder="What are we building?" required></textarea>
+          </div>
+          <div class="submit-row">
+            <button type="submit" class="btn primary magnetic" id="sendBtn"><span>Send Message</span><span class="arrow">→</span></button>
+            <span class="send-success" id="sendSuccess">Sent — thank you.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span class="l mono">© 2026 Kunal Deshmukh.</span>
+    <span class="back-top" id="backTop">Back to top ↑</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
