@@ -97,6 +97,94 @@ const PATHWAY: PathwayStep[] = [
   }
 ];
 
+const renderProjectVisual = (num: string) => {
+  if (num === "Project 01") {
+    return (
+      <div className="mockup-browser">
+        <div className="mockup-header">
+          <span className="dot dot-red"></span>
+          <span className="dot dot-yellow"></span>
+          <span className="dot dot-green"></span>
+          <span className="mockup-title">ecotrace-dashboard</span>
+        </div>
+        <div className="mockup-body dashboard-mockup">
+          <div className="mockup-stat-row">
+            <div className="mockup-stat">
+              <span className="lbl">Carbon</span>
+              <span className="val">2.4 t</span>
+            </div>
+            <div className="mockup-stat">
+              <span className="lbl">Trend</span>
+              <span className="val trend-down">↓ 18%</span>
+            </div>
+          </div>
+          <div className="mockup-chart">
+            <svg viewBox="0 0 100 30" className="chart-svg">
+              <path d="M0,25 Q25,10 50,15 T100,5" fill="none" stroke="var(--accent)" strokeWidth="2" />
+              <circle cx="100" cy="5" r="2" fill="var(--accent)" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (num === "Project 02") {
+    return (
+      <div className="mockup-browser">
+        <div className="mockup-header">
+          <span className="dot dot-red"></span>
+          <span className="dot dot-yellow"></span>
+          <span className="dot dot-green"></span>
+          <span className="mockup-title">bookify-store</span>
+        </div>
+        <div className="mockup-body store-mockup">
+          <div className="store-header">
+            <span className="store-logo">Bookify</span>
+            <span className="cart-badge">🛒 3</span>
+          </div>
+          <div className="store-grid">
+            <div className="book-card">
+              <span className="book-title">MERN Stack</span>
+              <span className="book-btn">Add</span>
+            </div>
+            <div className="book-card">
+              <span className="book-title">React UI</span>
+              <span className="book-btn">Add</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (num === "Project 03") {
+    return (
+      <div className="mockup-browser">
+        <div className="mockup-header">
+          <span className="dot dot-red"></span>
+          <span className="dot dot-yellow"></span>
+          <span className="dot dot-green"></span>
+          <span className="mockup-title">study-buddy-ai</span>
+        </div>
+        <div className="mockup-body chat-mockup">
+          <div className="chat-msg user">
+            <p>Explain Trie</p>
+          </div>
+          <div className="chat-msg ai">
+            <div className="ai-nodes">
+              <span className="node node-root"></span>
+              <span className="node-line l1"></span>
+              <span className="node node-child1"></span>
+              <span className="node-line l2"></span>
+              <span className="node node-child2"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  return null;
+};
+
 export default function Home() {
   // Form and utility states
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -657,6 +745,19 @@ export default function Home() {
                     <div className="proj-num">{proj.num}</div>
                     <h3>{proj.title}</h3>
                     <p>{proj.desc}</p>
+                    
+                    <div className="project-tags">
+                      {proj.badges.map((badge, bIndex) => (
+                        <span key={bIndex} className="tag-badge">
+                          {badge === "nodedotjs"
+                            ? "Node.js"
+                            : badge === "googlegemini"
+                            ? "Gemini API"
+                            : badge.charAt(0).toUpperCase() + badge.slice(1)}
+                        </span>
+                      ))}
+                    </div>
+
                     <div className="proj-links">
                       {proj.demoUrl && (
                         <a href={proj.demoUrl} target="_blank" rel="noopener noreferrer">
@@ -671,21 +772,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="proj-visual">
-                    <div className="stack-badges">
-                      {proj.badges.map((badge, bIndex) => (
-                        <span key={bIndex} className="badge">
-                          <img
-                            src={`https://cdn.simpleicons.org/${badge}/ffffff`}
-                            alt=""
-                          />
-                          {badge === "nodedotjs"
-                            ? "Node.js"
-                            : badge === "googlegemini"
-                            ? "Gemini API"
-                            : badge.charAt(0).toUpperCase() + badge.slice(1)}
-                        </span>
-                      ))}
-                    </div>
+                    {renderProjectVisual(proj.num)}
                   </div>
                 </div>
               ))}
